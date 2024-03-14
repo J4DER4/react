@@ -1,0 +1,154 @@
+
+/* Add your styles here */
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@500&display=swap');
+
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+@keyframes blurOut {
+    from {
+        transform: scale(0.95);
+        filter: blur(0);
+        opacity: 0.5;
+    }
+    to {
+        filter: blur(10px);
+        opacity: 0.4;
+        transform: scale(1);
+    }
+}
+
+@keyframes bgTransfer {
+    0% {
+        filter: blur(10px);
+        opacity: 0.4;
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(0.95);
+        filter: blur(0);
+        opacity: 0.8;
+    }
+    100%{
+        filter: blur(10px);
+        opacity: 0.4;
+        transform: scale(1);
+    }
+}
+
+::-ms-reveal {
+    display: none;
+}   
+
+:root{
+
+    --body-font: 'Comfortaa', sans-serif;
+    --font-optical-scaling: auto;
+    --font-weight: 500;
+    --font-style: normal;
+    --h1-font-size: 2.5rem;
+    --normal-font-size: 1.5rem;
+    --small-font-size: 1rem;
+    --webkit-backdrop-filter: blur(16px); /* Safari 9+, Chrome 76+ */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
+body {
+    background-color: black;
+    font-family: var(--body-font);
+    font-weight: var(--font-weight);
+    font-style: var(--font-style);
+    font-size: var(--font-optical-scaling);
+}
+.page__container{
+    position: relative;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logandbg__view{
+    position: inherit;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+.login__form{
+    margin-top: 25vh;
+    width: 400px;
+    position: relative;
+}
+.login__input{
+    width: 100%;
+    animation: fadeIn 2s ease-in-out;
+
+    border: 2px solid hsla(0, 5%, 36%, 0.566);
+    border-radius: 4rem;
+    backdrop-filter: blur(20px);
+    background: none;
+
+    color: hsla(0, 0%, 100%, 0.878);
+    padding: 0.5rem;
+    text-align: center;
+    font-size: 4rem;
+
+}
+
+.login__bg{
+    animation: blurOut 2s ease-in-out;
+    filter: blur(10px);
+    opacity: 0.4;
+    
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+}
+.Page img{
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 1fr max-content;
+    animation: fadeIn 3s ease-in-out;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    transform: scale(1);
+    align-items: center;
+    justify-content: center;
+    object-fit: cover;
+    color: #ff0000; /* replace #ff0000 with your desired color */
+
+}
